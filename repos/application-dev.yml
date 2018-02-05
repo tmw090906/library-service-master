@@ -51,3 +51,5 @@ hystrix:
 mybatis:
   mapperLocations: classpath:mapper/*.xml
   type-aliases-package: com.ccb.library.entity
+  
+version: v3.0
