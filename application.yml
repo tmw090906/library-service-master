@@ -1,0 +1,53 @@
+spring:
+  zipkin:
+      base-url: http://localhost:9400
+
+  redis:
+    database: 0
+    host: 192.168.59.130
+    port: 6379
+    timeout: 50
+    pool:
+      max-active: 12
+      max-wait: 1
+      min-idle: 0
+      max-idle: 8
+    password: 123
+  session:
+    store-type: redis
+
+  datasource:
+    name: druid
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/ncim
+    username: root
+    password: 123
+    type: com.alibaba.druid.pool.DruidDataSource
+    filters: stat
+    maxActive: 20
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
+
+feign:
+  hystrix:
+    enabled: true
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: SEMAPHORE
+
+mybatis:
+  mapperLocations: classpath:mapper/*.xml
+  type-aliases-package: com.ccb.library.entity
