@@ -19,7 +19,7 @@ spring:
   datasource:
     name: druid
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/ncim
+    url: jdbc:mysql://127.0.0.1:3306/ncim_library
     username: root
     password: 123
     type: com.alibaba.druid.pool.DruidDataSource
