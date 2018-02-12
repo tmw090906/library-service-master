@@ -49,7 +49,7 @@ hystrix:
           strategy: SEMAPHORE
 
 mybatis:
-  mapperLocations: classpath:mapper/*.xml
+  mapperLocations: classpath:mappers/*.xml
   type-aliases-package: com.ccb.library.entity
   
 version: v3.0
